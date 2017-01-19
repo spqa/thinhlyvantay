@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@parent_login_show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::post('student','IndexController@student_info')->name('student.info');

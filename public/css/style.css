@@ -1,0 +1,24 @@
+.row>.input-field{
+    margin-top: 0;
+}
+.mark-section>.card-panel{
+}
+.section .mark-section {
+    padding: 0;
+    overflow-y: auto;
+
+}
+.no-radius tr th{
+    border-radius: 0;
+
+}
+.section .mark-section table tr th{
+    border-radius: 0;
+}
+.section .mark-section table th,td{
+    border: 1px solid #d0d0d0;;
+}
+
+.mark-section .card-title{
+    padding:10px;
+}
