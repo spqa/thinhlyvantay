@@ -5,8 +5,8 @@
 
         <div class="section ">
             <div class="card-panel">
-                <h6>Mã học sinh : A156 </h6>
-                <h6>Họ và tên : Nguyễn Văn A </h6>
+                <h6>Mã học sinh : {{$student->code}} </h6>
+                <h6>Họ và tên : {{$student->last_name.' '.$student->first_name}} </h6>
             </div>
             <div class="card-panel mark-section">
                 <div class="card-title">
@@ -40,23 +40,24 @@
                     </thead>
 
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Công nghệ</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                        <td>10</td>
-                    </tr>
-
+                    @foreach($student->marks as $mark)
+                        <tr>
+                            <td>{{$loop->index+1}}</td>
+                            <td>{{$mark->subject->name}}</td>
+                            <td>{{$mark->H1M1}}</td>
+                            <td>{{$mark->H1M2}}</td>
+                            <td>{{$mark->H1M3}}</td>
+                            <td>{{$mark->H1M4}}</td>
+                            <td>{{$mark->H1G1}}</td>
+                            <td>{{$mark->H1G2}}</td>
+                            <td>{{$mark->H1G3}}</td>
+                            <td>{{$mark->H1G4}}</td>
+                            <td>{{$mark->H2G1}}</td>
+                            <td>{{$mark->H2G2}}</td>
+                            <td>{{$mark->HK}}</td>
+                            <td>{{$mark->TBM}}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>
@@ -70,13 +71,14 @@
                 <div class="row">
                     <div class="col m6 s12">
                         <ul class="collection">
-                            <li class="collection-item">Số ngày nghỉ<span class="badge red white-text">20</span></li>
+                            <li class="collection-item">Số ngày nghỉ<span
+                                        class="badge red white-text">{{$student->absent}}</span></li>
                             <li class="collection-item">Số ngày đi học muộn <span
-                                        class="badge red white-text"> 15</span></li>
+                                        class="badge red white-text"> {{$student->late}}</span></li>
                         </ul>
                     </div>
                     <div class="col s12">
-                        <p>sadasdasdasdasda s sf s sf ds  dfsfds  s fs</p>
+                        <p>{{$student->note}}</p>
                     </div>
                 </div>
             </div>

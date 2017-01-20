@@ -18,3 +18,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::post('student','IndexController@student_info')->name('student.info');
+
+Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
+    Route::resource('mark','MarkController');
+    Route::resource('student','StudentController');
+    Route::resource('subject','SubjectController');
+});

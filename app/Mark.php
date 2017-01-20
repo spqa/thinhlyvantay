@@ -12,6 +12,6 @@ class Mark extends Model
     }
 
     public function subject(){
-        $this->belongsTo(Subject::class);
+        return $this->belongsTo(Subject::class);
     }
 }

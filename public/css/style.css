@@ -22,3 +22,29 @@
 .mark-section .card-title{
     padding:10px;
 }
+
+#st-tbl-mark-fe th,td{
+    border: 1px solid #d0d0d0;;
+}
+
+.no-padding{
+    padding: 0 !important;
+}
+
+.overflow-y{
+    overflow-y: auto;
+}
+
+header, main, footer {
+    padding-left: 300px;
+}
+
+/*.student-filter-wrap .row a{*/
+    /*width: 160px;*/
+/*}*/
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
