@@ -23,4 +23,12 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
     Route::resource('mark','MarkController');
     Route::resource('student','StudentController');
     Route::resource('subject','SubjectController');
+    Route::resource('class','ClassnameController');
+    Route::get('timetable','SubjectController@timetable')->name('timetable.show');
+    Route::post('timetable','SubjectController@store_timetable')->name('timetable.store');
+    Route::get('mark-number','SubjectController@mark_number')->name('mark_number.show');
+    Route::post('mark-number','SubjectController@store_mark_number')->name('mark_number.store');
+    Route::post('save-student-info','ClassnameController@save_student_info');
 });
+
+

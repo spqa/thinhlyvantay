@@ -1,37 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 @section('content')
-    <div class="container ">
-        <div class="section login-section">
-            <div class="card-panel">
-                <h3>Điền mã học sinh</h3>
-                <div class="row">
-                    <form class="col s12" method="post" action="{{route('student.info')}}">
-                        {{csrf_field()}}
-                        <div class="row ">
-                            <div class="input-field col s12 m8 ">
-                                <input name="student_code" type="text" placeholder="mã học sinh ...">
-                                @if(request()->session()->has('student_404'))
-                                    <span class="red-text">
-                                    {{session('student_404')}}
-                                </span>
-                                @endif
-                            </div>
-                            <div class="submit col s12 m4">
-                                <input type="submit" class="btn" value="Tra Điểm">
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container-fluid">
         <div class="card-panel">
             <div class="row">
-                <div class="col s12 m8">
-                    <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ {{isset()}}</h5>
-                    <table class="bordered striped centered responsive-table no-radius">
+                <div class="col s12 ">
+                    <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ 11-02-2017</h5>
+                    <table id="timetable-data" class="bordered striped centered responsive-table no-radius">
                         <thead class="blue darken-4 white-text">
                         <tr>
                             <th data-field="id" width="10%">Tiết</th>
@@ -45,6 +19,7 @@
                         </thead>
 
                         <tbody>
+
                         <tr>
                             <td colspan="7">Sáng</td>
                         </tr>
@@ -78,37 +53,55 @@
                     </table>
 
                 </div>
-                <div class="col s12 m4">
-                    <h5 class="green-text">Số đầu điểm môn học</h5>
-                    <table class="bordered striped centered responsive-table no-radius">
-                        <thead class="blue darken-4 white-text">
-                        <tr>
-                            <th>STT</th>
-                            <th>Môn học</th>
-                            <th>M (HS1)</th>
-                            <th>15P (HS1)</th>
-                            <th>45P (HS2)</th>
-                            <th>HK (HS3)</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($subjects as $subject)
-                            <tr>
-                                <td>{{$loop->index+1}}</td>
-                                <td>{{$subject->name}}</td>
-                                <td>{{$subject->numberOfM}}</td>
-                                <td>{{$subject->numberOf15P}}</td>
-                                <td>{{$subject->numberOf45P}}</td>
-                                <td>{{$subject->numberOfHK}}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                <div class="col s12">
+                    <button id="btn-save-timetable" class="btn right">Save</button>
                 </div>
             </div>
         </div>
 
     </div>
+
 @endsection
 
 
+@section('page_script')
+    <script type="application/javascript">
+        $(document).ready(function () {
+            var dataArray=[];
+
+
+            $('#btn-save-timetable').click(function (e) {
+//                console.log($editedRow.first().attr('data-sotiet'));
+//                $editedRow.
+                $editedRow=$('#timetable-data').find('tr[data-edited]').each(function (index) {
+                    var data=$(this).find('td[data-content]');
+                    var row={};
+                    row.so_tiet=$(this).attr('data-sotiet');
+                    row.type=$(this).attr('data-type');
+                    row.thu2=data.eq(0).text();
+                    row.thu3=data.eq(1).text();
+                    row.thu4=data.eq(2).text();
+                    row.thu5=data.eq(3).text();
+                    row.thu6=data.eq(4).text();
+                    row.thu7=data.eq(5).text();
+                    dataArray.push(row);
+                });
+
+                $.ajax({
+                    type:"POST",
+                    data:{
+                        timetable:dataArray
+                    },
+                    success:function (data) {
+                        if (data!=1){
+                            Materialize.toast(data, 4000);
+                        }else{
+                            location.reload();
+                        }
+                    }
+                });
+                console.log(dataArray);
+            });
+        });
+    </script>
+    @endsection

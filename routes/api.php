@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,3 +16,4 @@ use Illuminate\Http\Request;
 //})->middleware('auth:api');
 
 Route::get('table/class/{class}/subject/{subject}','Admin\MarkController@show');
+Route::post('table/save','Admin\MarkController@store');

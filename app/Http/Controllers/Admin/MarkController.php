@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Mark;
 use App\Student;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MarkController extends Controller
 {
@@ -36,7 +38,46 @@ class MarkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $data=$request->data;
+//            dd($data);
+            $subject_id=$data['subject'];
+            $students=$data['student'];
+            DB::beginTransaction();
+            foreach ($students as $student){
+                foreach ($student['marks'] as $key=>$value){
+                    if ($value==''){
+                        $student['marks'][$key]=DB::raw('NULL');
+                    }
+
+                }
+                $mark = Mark::firstOrCreate([
+                    'subject_id'=>$subject_id,
+                    'student_id'=>$student['student']
+                ]);
+
+                $mark->H1M1=$student['marks']['H1M1'];
+                $mark->H1M2=$student['marks']['H1M2'];
+                $mark->H1M3=$student['marks']['H1M3'];
+                $mark->H1M4=$student['marks']['H1M4'];
+                $mark->H1G1=$student['marks']['H1G1'];
+                $mark->H1G2=$student['marks']['H1G2'];
+                $mark->H1G3=$student['marks']['H1G3'];
+                $mark->H1G4=$student['marks']['H1G4'];
+                $mark->H2G1=$student['marks']['H2G1'];
+                $mark->H2G2=$student['marks']['H2G2'];
+                $mark->HK=$student['marks']['HK'];
+                $mark->TBM=$student['marks']['TBM'];
+                $mark->save();
+            }
+            DB::commit();
+        }catch (\Exception $ex){
+            DB::rollback();
+
+            return $ex->getMessage();
+        }
+
+
     }
 
     /**

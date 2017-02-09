@@ -4,10 +4,10 @@
         <section>
             <div class="card-panel transparent z-depth-0 student-filter-wrap">
                 <div class="row">
-                    <div class="col s12">
+                    <div class="col s12 ">
                         <a class='dropdown-button btn' href='#' data-activates='choose-class' >Chọn lớp</a>
-                        <a class='dropdown-button btn' href='#' data-activates='choose-subject'>Chọn môn </a>
-                        <a class='dropdown-button btn right red' href='#'>Lưu lại </a>
+                        <a class='dropdown-button btn' href='#' data-activates='choose-subject' data-content="1">Anh</a>
+                        <a class='dropdown-button btn right teal darken-1 save' href='#' >Lưu lại <i class="fa fa-floppy-o "></i></a>
                         <div class="progress hide">
                             <div class="indeterminate"></div>
                         </div>
@@ -59,26 +59,55 @@
                     </thead>
                     <tbody>
                     @foreach($students as $student)
-                        <tr>
+                        <tr data-content="{{$student->id}}">
                             <td>{{$loop->index+1}}</td>
                             <td>{{$student->last_name.' '.$student->first_name}}</td>
-                            <td data-type="H1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M1}}</td>
-                            <td data-type="H1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M2}}</td>
-                            <td data-type="H1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M3}}</td>
-                            <td data-type="H1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M4}}</td>
-                            <td data-type="H1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G1}}</td>
-                            <td data-type="H1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G2}}</td>
-                            <td data-type="H1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G3}}</td>
-                            <td data-type="H1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G4}}</td>
-                            <td data-type="H2" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H2G1}}</td>
-                            <td data-type="H2" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H2G2}}</td>
-                            <td data-type="H3" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->HK}}</td>
-                            <td data-type="TBM">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->TBM}}</td>
+                            <td data-type="H1" data-content="H1M1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M1}}</td>
+                            <td data-type="H1" data-content="H1M2" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M2}}</td>
+                            <td data-type="H1" data-content="H1M3" data-content="H1M1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M3}}</td>
+                            <td data-type="H1" data-content="H1M4" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M4}}</td>
+                            <td data-type="H1" data-content="H1G1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G1}}</td>
+                            <td data-type="H1" data-content="H1G2" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G2}}</td>
+                            <td data-type="H1" data-content="H1G3" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G3}}</td>
+                            <td data-type="H1" data-content="H1G4" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G4}}</td>
+                            <td data-type="H2" data-content="H2G1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H2G1}}</td>
+                            <td data-type="H2" data-content="H2G2" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H2G2}}</td>
+                            <td data-type="H3" data-content="HK" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->HK}}</td>
+                            <td data-type="TBM" data-content="TBM">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->TBM}}</td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section>
+            <div class="card-panel transparent z-depth-0 student-filter-wrap">
+                <div class="row">
+                    <div class="col s12">
+                        <a class='dropdown-button btn' href='#' data-activates='choose-class' >Chọn lớp</a>
+                        <a class='dropdown-button btn' href='#' data-activates='choose-subject'>Chọn môn </a>
+                        <a class='dropdown-button btn right teal darken-1 save' href='#'>Lưu lại <i class="fa fa-floppy-o "></i></a>
+                        <div class="progress hide">
+                            <div class="indeterminate"></div>
+                        </div>
+                        <ul id='choose-class' class='dropdown-content'>
+                            @foreach($classnames as $classname)
+                                <li><a data-content="{{$classname->id}}" href="#">{{$classname->name}}</a></li>
+                            @endforeach
+                        </ul>
+
+                        <ul id='choose-subject' class='dropdown-content'>
+                            @foreach($subjects as $subject)
+                                <li><a data-content="{{$subject->id}}" href="#">{{$subject->name}}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </div>
 @endsection

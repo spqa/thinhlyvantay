@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Student;
-use Illuminate\Http\Request;
+use App\Subject;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
     public function parent_login_show(){
-        return view('parent_login');
+        $subjects = Subject::all();
+        $timetable=DB::table('timetable')->get();
+        return view('parent_login',compact('subjects','timetable'));
 
     }
 

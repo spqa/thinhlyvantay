@@ -16,15 +16,15 @@
     border-radius: 0;
 }
 .section .mark-section table th,td{
-    border: 1px solid #d0d0d0;;
+    border: 1px solid #d0d0d0;
 }
 
 .mark-section .card-title{
     padding:10px;
 }
 
-#st-tbl-mark-fe th,td{
-    border: 1px solid #d0d0d0;;
+table.centered thead tr th, table.centered tbody tr td {
+    border: 1px solid #d0d0d0 !important;
 }
 
 .no-padding{
@@ -36,7 +36,7 @@
 }
 
 header, main, footer {
-    padding-left: 300px;
+    padding-left: 270px;
 }
 
 /*.student-filter-wrap .row a{*/
