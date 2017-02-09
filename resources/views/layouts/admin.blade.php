@@ -9,7 +9,7 @@
 
     {{--    <link rel="stylesheet" href="{{asset('css/dataTables.material.css')}}">--}}
     <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.1')}}">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -46,10 +46,10 @@
             @if(auth()->check())
                 <form method="post" action="{{route('logout')}}">
                     {{csrf_field()}}
-                    <li><a href="#"><input class="btn" type="submit" value="Logout"></a></li>
+                    <li><a href="#"><input class="btn" type="submit" value="Log out"></a></li>
                 </form>
             @else
-                <li><a class="btn red" href="{{route('login')}}">Login</a></li>
+                <li><a class="btn red" href="{{route('login')}}">Log in</a></li>
             @endif
 
         </ul>
@@ -72,9 +72,12 @@
             <li><a class="{{Route::currentRouteName()=='timetable.show'?'indigo darken-3 white-text':''}}" href="{{route('timetable.show')}}"><i class="fa fa-calendar black-text" aria-hidden="true"></i> Thời khóa biểu</a></li>
             <li><a class="{{Route::currentRouteName()=='mark_number.show'?'indigo darken-3 white-text':''}}" href="{{route('mark_number.show')}}"><i class="fa fa-list-ul black-text" aria-hidden="true"></i> Số đầu điểm</a></li>
             @if(auth()->check())
-                <li><a href="{{route('logout')}}">Logout</a></li>
+                <form method="post" action="{{route('logout')}}">
+                    {{csrf_field()}}
+                    <li><a href="#"><input class="btn" type="submit" value="Log out"></a></li>
+                </form>
             @else
-                <li><a href="{{route('login')}}">Login</a></li>
+                <li><a href="{{route('login')}}">Log in</a></li>
             @endif
         </ul>
     </div>

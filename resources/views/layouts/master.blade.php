@@ -10,7 +10,7 @@
 {{--    <link rel="stylesheet" href="{{asset('css/dataTables.material.css')}}">--}}
 
     <link rel="stylesheet" href="//cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.1')}}">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -46,7 +46,7 @@
                 <li><a class="btn green" href="{{route('student.index')}}">Admin</a></li>
                 <form style="display: inline" method="post" action="{{route('logout')}}">
                     {{csrf_field()}}
-                    <li><a href="#"><input class="btn" type="submit" value="Logout"></a></li>
+                    <li><a href="#"><input class="btn" type="submit" value="Log out"></a></li>
                 </form>
             @else
                 <li><a class="btn red" href="{{route('login')}}">Login</a></li>
@@ -55,9 +55,12 @@
         </ul>
         <ul class="side-nav" id="mobile">
             @if(auth()->check())
-                <li><a href="{{route('logout')}}">Logout</a></li>
+                <form style="display: inline" method="post" action="{{route('logout')}}">
+                    {{csrf_field()}}
+                    <li><a href="#"><input class="btn" type="submit" value="Log out"></a></li>
+                </form>
             @else
-                <li><a href="{{route('login')}}">Login</a></li>
+                <li><a href="{{route('login')}}">Log in</a></li>
             @endif
         </ul>
     </div>

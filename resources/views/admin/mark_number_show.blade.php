@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col s12 ">
                     <h5 class="green-text">Số đầu điểm môn học</h5>
-                    <table id="mark-number-table" class="bordered striped centered responsive-table no-radius">
+                    <table id="mark-number-table" class="bordered striped centered responsive-table no-radius parent-timetable">
                         <thead class="blue darken-4 white-text">
                         <tr>
                             <th>STT</th>
@@ -31,7 +31,7 @@
                     </table>
                 </div>
                 <div class="col s12">
-                    <button id="btn-save-mark-number" class="btn right">Save</button>
+                    <button id="btn-save-mark-number" class="btn-space btn right">Lưu</button>
                 </div>
             </div>
         </div>

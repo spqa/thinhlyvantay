@@ -49,10 +49,14 @@ class StudentController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'classname' => 'required',
+        ],[
+            'first_name.required'=>'Chưa điền tên học sinh.',
+            'last_name.required'=>'Chưa điền họ của học sinh.',
+            'classname.required'=>'Chưa chọn lớp.',
         ]);
         while (true) {
-            $code = Factory::create()->numberBetween($min = 1000, $max = 9999);
-            $temp = Student::whereCode('A' . $code)->first();
+            $code = Factory::create()->numberBetween($min = 100000, $max = 999999);
+            $temp = Student::whereCode('12A4' . $code)->first();
             if (!isset($temp)) {
                 break;
             }
@@ -61,7 +65,7 @@ class StudentController extends Controller
         $student = Student::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'code' =>'A'.$code,
+            'code' =>'12A4'.$code,
             'classname_id'=>$request->classname
         ]);
         $student->marks()->save(new Mark([

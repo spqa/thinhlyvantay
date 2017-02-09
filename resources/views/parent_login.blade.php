@@ -30,8 +30,8 @@
         <div class="card-panel">
             <div class="row">
                 <div class="col s12 m8">
-                    <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ {{!empty(cache('timetable-date'))?cache('timetable-date'):\Carbon\Carbon::now()->toDateTimeString()}}</h5>
-                    <table class="bordered striped centered responsive-table no-radius">
+                    <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ {{!empty(cache('timetable-date'))?cache('timetable-date'):date("Y-m-d")}}</h5>
+                    <table class="bordered striped centered responsive-table no-radius parent-timetable">
                         <thead class="blue darken-4 white-text">
                         <tr>
                             <th data-field="id" width="10%">Tiết</th>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="col s12 m4">
                     <h5 class="green-text">Số đầu điểm môn học</h5>
-                    <table class="bordered striped centered responsive-table no-radius">
+                    <table class="bordered striped centered responsive-table no-radius parent-timetable">
                         <thead class="blue darken-4 white-text">
                         <tr>
                             <th>STT</th>

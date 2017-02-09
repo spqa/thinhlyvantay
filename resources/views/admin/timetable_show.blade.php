@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col s12 ">
                     <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ {{cache('timetable-date')}}</h5>
-                    <table id="timetable-data" class="bordered striped centered responsive-table no-radius">
+                    <table id="timetable-data" class="bordered striped centered responsive-table no-radius parent-timetable">
                         <thead class="blue darken-4 white-text">
                         <tr>
                             <th data-field="id" width="10%">Tiết</th>
@@ -54,7 +54,7 @@
 
                 </div>
                 <div class="col s12">
-                    <button id="btn-save-timetable" class="btn right">Save</button>
+                    <button id="btn-save-timetable" class="btn-space btn right">Lưu</button>
                 </div>
             </div>
         </div>

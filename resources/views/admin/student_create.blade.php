@@ -36,7 +36,7 @@
                             <label for="class-select">Chọn Lớp</label>
                         </div>
                         <div class="col s12">
-                            <input class="btn right green" type="submit" value="Save" >
+                            <input class="btn right green" type="submit" value="Lưu" >
                         </div>
                     </form>
                 </div>

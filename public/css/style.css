@@ -39,6 +39,18 @@ header, main, footer {
     padding-left: 270px;
 }
 
+.margin-10{
+ margin: 10px !important;
+}
+
+.btn-subject{
+    min-width: 186px !important;
+}
+.btn-space{
+  margin-right: 5px !important;
+  margin-top: 6px !important;
+}
+
 /*.student-filter-wrap .row a{*/
     /*width: 160px;*/
 /*}*/
@@ -46,5 +58,10 @@ header, main, footer {
 @media only screen and (max-width : 992px) {
     header, main, footer {
         padding-left: 0;
+    }
+
+    table.centered.parent-timetable thead tr th, table.centered.parent-timetable tbody tr td{
+        border-left: none !important;
+        border-right: none !important;
     }
 }

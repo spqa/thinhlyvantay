@@ -5,9 +5,12 @@
             <div class="card-panel transparent z-depth-0 student-filter-wrap">
                 <div class="row">
                     <div class="col s12 ">
-                        <a class='dropdown-button btn' href='#' data-activates='choose-class' >Chọn lớp</a>
-                        <a class='dropdown-button btn' href='#' data-activates='choose-subject' data-content="1">Anh</a>
-                        <a class='dropdown-button btn right teal darken-1 save' href='#' >Lưu lại <i class="fa fa-floppy-o "></i></a>
+                        <a class='dropdown-button btn hide-on-small-only' href='#' data-activates='choose-class' >Chọn lớp</a>
+                        <a class='col s12 dropdown-button btn hide-on-med-and-up' href='#' data-activates='choose-class' >Chọn lớp</a>
+                        <a class='dropdown-button btn btn-subject hide-on-small-only' href='#' data-activates='choose-subject' data-content="1">Anh</a>
+                        <a class='col s12 dropdown-button btn btn-subject hide-on-med-and-up' href='#' data-activates='choose-subject' data-content="1">Anh</a>
+                        <a class='dropdown-button btn right teal darken-1 save hide-on-small-only' href='#' >Lưu lại <i class="fa fa-floppy-o "></i></a>
+                        <a class='col s12 dropdown-button btn teal darken-1 save hide-on-med-and-up' href='#' >Lưu lại <i class="fa fa-floppy-o "></i></a>
                         <div class="progress hide">
                             <div class="indeterminate"></div>
                         </div>
@@ -86,10 +89,13 @@
         <section>
             <div class="card-panel transparent z-depth-0 student-filter-wrap">
                 <div class="row">
-                    <div class="col s12">
-                        <a class='dropdown-button btn' href='#' data-activates='choose-class' >Chọn lớp</a>
-                        <a class='dropdown-button btn' href='#' data-activates='choose-subject'>Chọn môn </a>
-                        <a class='dropdown-button btn right teal darken-1 save' href='#'>Lưu lại <i class="fa fa-floppy-o "></i></a>
+                    <div class="col s12 ">
+                        <a class='dropdown-button btn hide-on-small-only' href='#' data-activates='choose-class' >Chọn lớp</a>
+                        <a class='col s12 dropdown-button btn hide-on-med-and-up' href='#' data-activates='choose-class' >Chọn lớp</a>
+                        <a class='dropdown-button btn btn-subject hide-on-small-only' href='#' data-activates='choose-subject' data-content="1">Anh</a>
+                        <a class='col s12 dropdown-button btn btn-subject hide-on-med-and-up' href='#' data-activates='choose-subject' data-content="1">Anh</a>
+                        <a class='dropdown-button btn right teal darken-1 save hide-on-small-only' href='#' >Lưu lại <i class="fa fa-floppy-o "></i></a>
+                        <a class='col s12 dropdown-button btn teal darken-1 save hide-on-med-and-up' href='#' >Lưu lại <i class="fa fa-floppy-o "></i></a>
                         <div class="progress hide">
                             <div class="indeterminate"></div>
                         </div>

@@ -5,10 +5,14 @@
             <div class="card-panel transparent z-depth-0 ">
                 <div class="row">
                     <div class="col s12 ">
-                        <a class='dropdown-button btn' href='#' data-activates='class-list'>Chọn lớp</a>
-                        <a class=' btn teal right' href='{{route('student.create')}}' >Thêm học sinh</a>
-                        <a class=' btn red right' href="#modal1">Xóa học sinh</a>
-                        <button class='btn-save-student-info btn green right'>Save</button>
+                        <a class='dropdown-button btn btn-space hide-on-small-only' href='#' data-activates='class-list'>Chọn lớp</a>
+                        <a class='col s12 dropdown-button btn btn-space hide-on-med-and-up right' href='#' data-activates='class-list'>Chọn lớp</a>
+                        <button class='btn-save-student-info btn green right btn-space hide-on-small-only'>Lưu</button>
+                        <button class='col s12 btn-save-student-info btn green right btn-space hide-on-med-and-up'>Lưu</button>
+                        <a class=' btn teal right btn-space hide-on-small-only' href='{{route('student.create')}}' >Thêm học sinh</a>
+                        <a class='col s12 btn teal right btn-space hide-on-med-and-up' href='{{route('student.create')}}' >Thêm học sinh</a>
+                        <a class=' btn red right btn-space hide-on-small-only' href="#modal1">Xóa học sinh</a>
+                        <a class='col s12 btn red right btn-space hide-on-med-and-up' href="#modal1">Xóa học sinh</a>
                         <div class="progress hide">
                             <div class="indeterminate"></div>
                         </div>
