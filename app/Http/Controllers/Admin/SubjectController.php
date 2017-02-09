@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Subject;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class SubjectController extends Controller
@@ -100,6 +102,7 @@ class SubjectController extends Controller
                 DB::table('timetable')->whereSoTiet($row['so_tiet'])->whereType($row['type'])->update($row);
             }
             DB::commit();
+            Cache::forever('timetable-date',Carbon::now()->toDateString());
             return 1;
         }
         catch(\Exception $exception){

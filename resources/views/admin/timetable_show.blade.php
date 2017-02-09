@@ -4,7 +4,7 @@
         <div class="card-panel">
             <div class="row">
                 <div class="col s12 ">
-                    <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ 11-02-2017</h5>
+                    <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ {{cache('timetable-date')}}</h5>
                     <table id="timetable-data" class="bordered striped centered responsive-table no-radius">
                         <thead class="blue darken-4 white-text">
                         <tr>

@@ -1,0 +1,8 @@
+$ mkdir -p /home/www/thinhly.tk/stage/releases
+mkdir -p /home/www/thinhly.tk/stage/releases
+
+$ mkdir -p /home/www/thinhly.tk/stage/current
+mkdir -p /home/www/thinhly.tk/stage/current
+
+$ mkdir -p /home/www/thinhly.tk/stage/shared
+mkdir -p /home/www/thinhly.tk/stage/shared

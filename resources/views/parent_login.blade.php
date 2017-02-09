@@ -30,7 +30,7 @@
         <div class="card-panel">
             <div class="row">
                 <div class="col s12 m8">
-                    <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ {{isset()}}</h5>
+                    <h5 class="green-text">Thời khóa biểu - Lớp 11A4 - có tác dụng từ {{!empty(cache('timetable-date'))?cache('timetable-date'):\Carbon\Carbon::now()->toDateTimeString()}}</h5>
                     <table class="bordered striped centered responsive-table no-radius">
                         <thead class="blue darken-4 white-text">
                         <tr>
