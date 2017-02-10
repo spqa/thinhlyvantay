@@ -96,7 +96,10 @@
                         <a class='col s12 dropdown-button btn btn-subject hide-on-med-and-up' href='#' data-activates='choose-subject' data-content="1">Anh</a>
                         <a class='dropdown-button btn right teal darken-1 save hide-on-small-only' href='#' >Lưu lại <i class="fa fa-floppy-o "></i></a>
                         <a class='col s12 dropdown-button btn teal darken-1 save hide-on-med-and-up' href='#' >Lưu lại <i class="fa fa-floppy-o "></i></a>
+                        <a class='col s12 dropdown-button btn teal darken-1 hide-on-med-and-up' href='#' >Xuất Exel <i class="fa fa-floppy-o "></i></a>
+                        <a class=' dropdown-button btn teal darken-1 hide-on-small-only' href='#' id="export-exel" >Xuất Exel <i class="fa fa-floppy-o "></i></a>
                         <div class="progress hide">
+
                             <div class="indeterminate"></div>
                         </div>
                         <ul id='choose-class' class='dropdown-content'>
@@ -117,3 +120,13 @@
         </section>
     </div>
 @endsection
+
+@section('page_script')
+    <script>
+        $('#export-exel').click(function (e) {
+            e.preventDefault();
+
+            window.open('/admin/export-exel/'+$("[data-activates='choose-subject']").attr('data-content'));
+        });
+    </script>
+    @endsection

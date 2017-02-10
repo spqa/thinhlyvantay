@@ -6,7 +6,7 @@
     <!--Import materialize.css-->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
+    <title>Admin Panel</title>
     {{--    <link rel="stylesheet" href="{{asset('css/dataTables.material.css')}}">--}}
     <link rel="stylesheet" href="//cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('css/style.css?v=0.1')}}">

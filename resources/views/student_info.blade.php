@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title',$student->first_name.' | Thinhly')
 @section('content')
 
     <div class="container">

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\ExelTemplate\SubjectMarkReport;
 use App\Http\Controllers\Controller;
+use App\Student;
 use App\Subject;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -12,10 +14,19 @@ use Illuminate\Support\Facades\DB;
 class SubjectController extends Controller
 {
     /**
+     * SubjectController constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         //
@@ -159,5 +170,38 @@ class SubjectController extends Controller
             return $exception->getMessage();
         }
 
+    }
+
+    public function exportSubjectReport($id,SubjectMarkReport $report){
+        $subject=Subject::find($id);
+        $report->sheet('Bảng điểm môn học '.$subject->name,function ($sheet)use($subject){
+            $sheet->appendRow(['STT','Mã HS','Họ tên','M1','M2','M3','M4','15P1','15P2','15P3','15P4','45P1','45P2','HK']);
+            $students=Student::with('marks')->get();
+            $index=0;
+            foreach ($students as $student){
+            $index++;
+                $marks=$student->marks->where('subject_id',$subject->id)->first();
+                $sheet->appendRow([
+                $index,
+                $student->code,
+                $student->first_name.' '.$student->last_name,
+                $marks->H1M1,
+                $marks->H1M2,
+                $marks->H1M3,
+                $marks->H1M4,
+                $marks->H1G1,
+                $marks->H1G2,
+                $marks->H1G3,
+                $marks->H1G4,
+                $marks->H2G1,
+                $marks->H2G2,
+                $marks->HK,
+            ]);
+            }
+            $sheet->row(1,function ($row){
+                $row->setBackground('#d3e2d4');
+            });
+            $sheet->setAllBorders('thin');
+        })->download('xlsx');
     }
 }
