@@ -1,26 +1,27 @@
-20170209152425
 20170209152825
 20170209153347
 20170209155600
 20170209160917
-$ git clone "https://spqa:anhminhhehe7565775@github.com/spqa/thinhlyvantay.git" "/home/www/thinhly.tk/production/releases/20170209161808" --branch="master" --depth="1"
-git clone "https://spqa:anhminhhehe7565775@github.com/spqa/thinhlyvantay.git" "/home/www/thinhly.tk/production/releases/20170209161808" --branch="master" --depth="1"
-Cloning into '/home/www/thinhly.tk/production/releases/20170209161808'...
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
+20170209161808
+$ git clone "https://spqa:anhminhhehe7565775@github.com/spqa/thinhlyvantay.git" "/home/www/thinhly.tk/production/releases/20170209184702" --branch="master" --depth="1"
+git clone "https://spqa:anhminhhehe7565775@github.com/spqa/thinhlyvantay.git" "/home/www/thinhly.tk/production/releases/20170209184702" --branch="master" --depth="1"
+Cloning into '/home/www/thinhly.tk/production/releases/20170209184702'...
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
 $ git submodule update --init --recursive
-cd /home/www/thinhly.tk/production/releases/20170209161808
+cd /home/www/thinhly.tk/production/releases/20170209184702
 git submodule update --init --recursive
 
 which: no bundle in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
 /usr/bin/composer
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
 $ /usr/bin/composer install --no-interaction --no-dev --prefer-dist
-cd /home/www/thinhly.tk/production/releases/20170209161808
+cd /home/www/thinhly.tk/production/releases/20170209184702
 /usr/bin/composer install --no-interaction --no-dev --prefer-dist
 PHP Warning:  Module 'zip' already loaded in Unknown on line 0
 Do not run Composer as root/super user! See https://getcomposer.org/root for details
 Loading composer repositories with package information
 Installing dependencies from lock file
+Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
 Package operations: 31 installs, 0 updates, 0 removals
   - Installing jakub-onderka/php-console-color (0.1) Loading from cache
   - Installing vlucas/phpdotenv (v2.4.0) Loading from cache
@@ -60,83 +61,83 @@ PHP Warning:  Module 'zip' already loaded in Unknown on line 0
 Generating optimized class loader
 Compiling common classes
 which: no npm in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
 $ npm install
-cd /home/www/thinhly.tk/production/releases/20170209161808
+cd /home/www/thinhly.tk/production/releases/20170209184702
 npm install
 bash: npm: command not found
 which: no bower in (/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin)
-which: no bower in (/home/www/thinhly.tk/production/releases/20170209161808/node_modules/.bin)
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
-$ chmod -R 755 /home/www/thinhly.tk/production/releases/20170209161808/app/database/production.sqlite
-$ chmod -R g+s /home/www/thinhly.tk/production/releases/20170209161808/app/database/production.sqlite
-$ chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209161808/app/database/production.sqlite
-cd /home/www/thinhly.tk/production/releases/20170209161808
-chmod -R 755 /home/www/thinhly.tk/production/releases/20170209161808/app/database/production.sqlite
-chmod -R g+s /home/www/thinhly.tk/production/releases/20170209161808/app/database/production.sqlite
-chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209161808/app/database/production.sqlite
-chmod: cannot access ‘/home/www/thinhly.tk/production/releases/20170209161808/app/database/production.sqlite’: No such file or directory
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
-$ chmod -R 755 /home/www/thinhly.tk/production/releases/20170209161808/storage
-$ chmod -R g+s /home/www/thinhly.tk/production/releases/20170209161808/storage
-$ chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209161808/storage
-cd /home/www/thinhly.tk/production/releases/20170209161808
-chmod -R 755 /home/www/thinhly.tk/production/releases/20170209161808/storage
-chmod -R g+s /home/www/thinhly.tk/production/releases/20170209161808/storage
-chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209161808/storage
+which: no bower in (/home/www/thinhly.tk/production/releases/20170209184702/node_modules/.bin)
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
+$ chmod -R 755 /home/www/thinhly.tk/production/releases/20170209184702/app/database/production.sqlite
+$ chmod -R g+s /home/www/thinhly.tk/production/releases/20170209184702/app/database/production.sqlite
+$ chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209184702/app/database/production.sqlite
+cd /home/www/thinhly.tk/production/releases/20170209184702
+chmod -R 755 /home/www/thinhly.tk/production/releases/20170209184702/app/database/production.sqlite
+chmod -R g+s /home/www/thinhly.tk/production/releases/20170209184702/app/database/production.sqlite
+chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209184702/app/database/production.sqlite
+chmod: cannot access ‘/home/www/thinhly.tk/production/releases/20170209184702/app/database/production.sqlite’: No such file or directory
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
+$ chmod -R 755 /home/www/thinhly.tk/production/releases/20170209184702/storage
+$ chmod -R g+s /home/www/thinhly.tk/production/releases/20170209184702/storage
+$ chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209184702/storage
+cd /home/www/thinhly.tk/production/releases/20170209184702
+chmod -R 755 /home/www/thinhly.tk/production/releases/20170209184702/storage
+chmod -R g+s /home/www/thinhly.tk/production/releases/20170209184702/storage
+chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209184702/storage
 chown: invalid user: ‘www-data:www-data’
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
-$ chmod -R 755 /home/www/thinhly.tk/production/releases/20170209161808/public
-$ chmod -R g+s /home/www/thinhly.tk/production/releases/20170209161808/public
-$ chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209161808/public
-cd /home/www/thinhly.tk/production/releases/20170209161808
-chmod -R 755 /home/www/thinhly.tk/production/releases/20170209161808/public
-chmod -R g+s /home/www/thinhly.tk/production/releases/20170209161808/public
-chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209161808/public
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
+$ chmod -R 755 /home/www/thinhly.tk/production/releases/20170209184702/public
+$ chmod -R g+s /home/www/thinhly.tk/production/releases/20170209184702/public
+$ chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209184702/public
+cd /home/www/thinhly.tk/production/releases/20170209184702
+chmod -R 755 /home/www/thinhly.tk/production/releases/20170209184702/public
+chmod -R g+s /home/www/thinhly.tk/production/releases/20170209184702/public
+chown -R www-data:www-data /home/www/thinhly.tk/production/releases/20170209184702/public
 chown: invalid user: ‘www-data:www-data’
-$ rm -rf /home/www/thinhly.tk/production/releases/20170209161808/storage/logs
-rm -rf /home/www/thinhly.tk/production/releases/20170209161808/storage/logs
+$ rm -rf /home/www/thinhly.tk/production/releases/20170209184702/storage/logs
+rm -rf /home/www/thinhly.tk/production/releases/20170209184702/storage/logs
 
-$ ln -s /home/www/thinhly.tk/production/shared/storage/logs /home/www/thinhly.tk/production/releases/20170209161808/storage/logs
-ln -s /home/www/thinhly.tk/production/shared/storage/logs /home/www/thinhly.tk/production/releases/20170209161808/storage/logs
+$ ln -s /home/www/thinhly.tk/production/shared/storage/logs /home/www/thinhly.tk/production/releases/20170209184702/storage/logs
+ln -s /home/www/thinhly.tk/production/shared/storage/logs /home/www/thinhly.tk/production/releases/20170209184702/storage/logs
 
-$ ln -s /home/www/thinhly.tk/production/shared/.env /home/www/thinhly.tk/production/releases/20170209161808/.env
-ln -s /home/www/thinhly.tk/production/shared/.env /home/www/thinhly.tk/production/releases/20170209161808/.env
+$ ln -s /home/www/thinhly.tk/production/shared/.env /home/www/thinhly.tk/production/releases/20170209184702/.env
+ln -s /home/www/thinhly.tk/production/shared/.env /home/www/thinhly.tk/production/releases/20170209184702/.env
 
 $ rm -rf /home/www/thinhly.tk/production/current
 rm -rf /home/www/thinhly.tk/production/current
 
-$ ln -s /home/www/thinhly.tk/production/releases/20170209161808 /home/www/thinhly.tk/production/current
-ln -s /home/www/thinhly.tk/production/releases/20170209161808 /home/www/thinhly.tk/production/current
+$ ln -s /home/www/thinhly.tk/production/releases/20170209184702 /home/www/thinhly.tk/production/current
+ln -s /home/www/thinhly.tk/production/releases/20170209184702 /home/www/thinhly.tk/production/current
 
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
 $ php artisan optimize --env="production"
-cd /home/www/thinhly.tk/production/releases/20170209161808
+cd /home/www/thinhly.tk/production/releases/20170209184702
 php artisan optimize --env="production"
 PHP Warning:  Module 'zip' already loaded in Unknown on line 0
 Generating optimized class loader
 Compiling common classes
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
 $ php artisan route:cache --env="production"
-cd /home/www/thinhly.tk/production/releases/20170209161808
+cd /home/www/thinhly.tk/production/releases/20170209184702
 php artisan route:cache --env="production"
 PHP Warning:  Module 'zip' already loaded in Unknown on line 0
 Route cache cleared!
 Routes cached successfully!
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
 $ php artisan config:cache --env="production"
-cd /home/www/thinhly.tk/production/releases/20170209161808
+cd /home/www/thinhly.tk/production/releases/20170209184702
 php artisan config:cache --env="production"
 PHP Warning:  Module 'zip' already loaded in Unknown on line 0
 Configuration cache cleared!
 Configuration cached successfully!
-<fg=cyan>production/0/production</fg=cyan> |=> Successfully deployed release 20170209161808
-$ rm -rf /home/www/thinhly.tk/production/releases/20170209152425
-rm -rf /home/www/thinhly.tk/production/releases/20170209152425
+<fg=cyan>production/0/production</fg=cyan> |=> Successfully deployed release 20170209184702
+$ rm -rf /home/www/thinhly.tk/production/releases/20170209152825
+rm -rf /home/www/thinhly.tk/production/releases/20170209152825
 
-$ cd /home/www/thinhly.tk/production/releases/20170209161808
+$ cd /home/www/thinhly.tk/production/releases/20170209184702
 $ chown -R nginx:nginx *
-cd /home/www/thinhly.tk/production/releases/20170209161808
+cd /home/www/thinhly.tk/production/releases/20170209184702
 chown -R nginx:nginx *
 
 <fg=cyan>production/0/production</fg=cyan> |=> Removing <info>1 release</info> from the server

@@ -6,7 +6,7 @@
     <!--Import materialize.css-->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
+    <title>@yield('title','Website xem điểm của thầy Thịnh dạy Lý')</title>
 {{--    <link rel="stylesheet" href="{{asset('css/dataTables.material.css')}}">--}}
 
     <link rel="stylesheet" href="//cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">

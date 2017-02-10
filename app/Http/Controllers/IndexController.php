@@ -19,7 +19,7 @@ class IndexController extends Controller
         $student_code=request('student_code');
         $student=Student::with('marks','classname')->whereCode($student_code)->first();
         if (!isset($student)){
-            request()->session()->flash('student_404','Mã sinh viên không đúng !');
+            request()->session()->flash('student_404','Mã học sinh không đúng !');
 
             return back();
         }
