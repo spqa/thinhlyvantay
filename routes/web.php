@@ -29,6 +29,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
     Route::get('mark-number','SubjectController@mark_number')->name('mark_number.show');
     Route::post('mark-number','SubjectController@store_mark_number')->name('mark_number.store');
     Route::post('save-student-info','ClassnameController@save_student_info');
+    Route::get('list-class','ClassnameController@class_list')->name('class.list');
 
     Route::get('export-exel/{id}','SubjectController@exportSubjectReport');
 });

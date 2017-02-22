@@ -51,6 +51,10 @@ header, main, footer {
   margin-top: 6px !important;
 }
 
+.class-form{
+    margin: 20px;
+}
+
 /*.student-filter-wrap .row a{*/
     /*width: 160px;*/
 /*}*/

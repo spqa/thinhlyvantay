@@ -113,11 +113,13 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 table.clear().draw();
+                var i=0;
                 $.each(data, function (key, value) {
+                    i++;
                     console.log(value);
                     if (typeof value.marks[0] == 'undefined') {
                         var row = table.row.add([
-                            value.id,
+                            i,
                             value.last_name + ' ' + value.first_name,
                             '', '', '', '', '', '', '', '', '', '', '', ''
                         ]).draw().node();
@@ -137,7 +139,7 @@ $(document).ready(function () {
                         td.eq(13).attr('data-type', 'TBM').attr('data-content','TBM');
                     } else {
                         var row = table.row.add([
-                            value.id,
+                            i,
                             value.last_name + ' ' + value.first_name,
                             value.marks[0].H1M1,
                             value.marks[0].H1M2,

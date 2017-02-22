@@ -17,10 +17,13 @@ class ClassnameController extends Controller
      */
     public function index()
     {
-        $classname=Classname::first();
-        $classnames=Classname::all();
-        $students=$classname->students()->get();
-        return view('admin.class_show',compact('students','classnames','classname'));
+        $classname = Classname::first();
+        $classnames = Classname::all();
+        if ($classnames->count()==0){
+            return redirect()->route('class.list');
+        }
+        $students = $classname->students()->get();
+        return view('admin.class_show', compact('students', 'classnames', 'classname'));
     }
 
     /**
@@ -36,32 +39,39 @@ class ClassnameController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'classname'=>'unique:classnames,name'
+        ]);
+        Classname::create([
+            'name'=>$request->classname
+        ]);
+        $request->session()->flash('status',1);
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $classname=Classname::findOrFail($id);
-        $classnames=Classname::all();
-        $students=$classname->students()->get();
-        return view('admin.class_show',compact('students','classnames','classname'));
+        $classname = Classname::findOrFail($id);
+        $classnames = Classname::all();
+        $students = $classname->students()->get();
+        return view('admin.class_show', compact('students', 'classnames', 'classname'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -72,8 +82,8 @@ class ClassnameController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -84,48 +94,58 @@ class ClassnameController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $classname=Classname::whereName($id)->first();
+        $classname->students()->delete();
+        $classname->delete();
     }
 
-    public function save_student_info(){
-        $student_info=request('student_info');
-        $index=0;
-        foreach ($student_info as $row){
+    public function save_student_info()
+    {
+        $student_info = request('student_info');
+        $index = 0;
+        foreach ($student_info as $row) {
 
-            if (!is_numeric($row['absent'])&&!empty($row['absent'])
-                || !is_numeric($row['late'])&&!empty($row['late'])){
+            if (!is_numeric($row['absent']) && !empty($row['absent'])
+                || !is_numeric($row['late']) && !empty($row['late'])
+            ) {
                 return "Sai kiểu chữ số";
             }
 
-            foreach ($row as $key=>$value){
-                if ($value==''){
-                    $student_info[$index][$key]=DB::raw('NULL');
+            foreach ($row as $key => $value) {
+                if ($value == '') {
+                    $student_info[$index][$key] = DB::raw('NULL');
                 }
 
             }
             $index++;
         }
-        try{
-            foreach ($student_info as $row){
-                $student=Student::find($row['id']);
-                $student->last_name=$row['last_name'];
-                $student->first_name=$row['first_name'];
-                $student->absent=$row['absent'];
-                $student->late=$row['late'];
-                $student->note=$row['note'];
+        try {
+            foreach ($student_info as $row) {
+                $student = Student::find($row['id']);
+                $student->last_name = $row['last_name'];
+                $student->first_name = $row['first_name'];
+                $student->absent = $row['absent'];
+                $student->late = $row['late'];
+                $student->note = $row['note'];
                 $student->save();
             }
             return 1;
-        }catch(\Exception $exception){
+        } catch (\Exception $exception) {
             return $exception->getMessage();
 
         }
 
 
+    }
+
+    public function class_list()
+    {
+        $classnames=Classname::all();
+        return view('admin.class_list',compact('classnames'));
     }
 }

@@ -71,6 +71,7 @@
             <li><a class="{{Request::is('admin/class*')?'indigo darken-3 white-text':''}}" href="{{route('class.index')}}"><i class="fa fa-id-card-o black-text" aria-hidden="true"></i> Thông tin học sinh</a></li>
             <li><a class="{{Route::currentRouteName()=='timetable.show'?'indigo darken-3 white-text':''}}" href="{{route('timetable.show')}}"><i class="fa fa-calendar black-text" aria-hidden="true"></i> Thời khóa biểu</a></li>
             <li><a class="{{Route::currentRouteName()=='mark_number.show'?'indigo darken-3 white-text':''}}" href="{{route('mark_number.show')}}"><i class="fa fa-list-ul black-text" aria-hidden="true"></i> Số đầu điểm</a></li>
+            <li><a class="{{Route::currentRouteName()=='class.list'?'indigo darken-3 white-text':''}}" href="{{route('class.list')}}"><i class="fa fa-list-ul black-text" aria-hidden="true"></i> Quản lý lớp</a></li>
             @if(auth()->check())
                 <form method="post" action="{{route('logout')}}">
                     {{csrf_field()}}
@@ -94,7 +95,7 @@
 
 <script src="{{asset('js/jquery.dataTables.js')}}"></script>
 <script src="{{asset('js/dataTables.material.js')}}"></script>
-<script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('js/script.js?v=0.1')}}"></script>
 @yield('page_script')
 </body>
 </html>
