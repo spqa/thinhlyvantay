@@ -56,18 +56,9 @@
         <ul class="side-nav fixed" id="mobile">
             <li class="grey-text"><h2>Thinhly</h2></li>
             <li><a class="{{Route::currentRouteName()=='student.index'?'indigo darken-3 white-text':''}}" href="{{route('student.index')}}"><i class="fa fa-list-ul black-text" aria-hidden="true"></i> Quản lý điểm </a></li>
-            {{--<li class="no-padding">--}}
-                {{--<ul class="collapsible collapsible-accordion">--}}
-                    {{--<li>--}}
-                        {{--<a class="collapsible-header">Quản lý học sinh<i class="material-icons">arrow_drop_down</i></a>--}}
-                        {{--<div class="collapsible-body">--}}
-                            {{--<ul>--}}
-                                {{----}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
+            <li><a class="{{Route::currentRouteName()=='mark.index'?'indigo darken-3 white-text':''}}"
+                   href="{{route('mark.index')}}"><i class="fa fa-list-ul black-text" aria-hidden="true"></i> Điểm trung
+                    bình </a></li>
             <li><a class="{{Request::is('admin/class*')?'indigo darken-3 white-text':''}}" href="{{route('class.index')}}"><i class="fa fa-id-card-o black-text" aria-hidden="true"></i> Thông tin học sinh</a></li>
             <li><a class="{{Route::currentRouteName()=='timetable.show'?'indigo darken-3 white-text':''}}" href="{{route('timetable.show')}}"><i class="fa fa-calendar black-text" aria-hidden="true"></i> Thời khóa biểu</a></li>
             <li><a class="{{Route::currentRouteName()=='mark_number.show'?'indigo darken-3 white-text':''}}" href="{{route('mark_number.show')}}"><i class="fa fa-list-ul black-text" aria-hidden="true"></i> Số đầu điểm</a></li>
@@ -95,7 +86,7 @@
 
 <script src="{{asset('js/jquery.dataTables.js')}}"></script>
 <script src="{{asset('js/dataTables.material.js')}}"></script>
-<script src="{{asset('js/script.js?v=0.1')}}"></script>
+<script src="{{asset('js/script.js?v=0.2')}}"></script>
 @yield('page_script')
 </body>
 </html>

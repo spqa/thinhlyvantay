@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Mark;
 use App\Student;
 use App\Subject;
+use Carbon\Carbon;
 use Faker\Factory;
 use Illuminate\Http\Request;
 
@@ -54,9 +55,10 @@ class StudentController extends Controller
             'last_name.required'=>'Chưa điền họ của học sinh.',
             'classname.required'=>'Chưa chọn lớp.',
         ]);
+        $cl = Classname::find($request->classname);
         while (true) {
             $code = Factory::create()->numberBetween($min = 100000, $max = 999999);
-            $temp = Student::whereCode('12A4' . $code)->first();
+            $temp = Student::whereCode($cl->name . $code)->first();
             if (!isset($temp)) {
                 break;
             }
@@ -65,8 +67,9 @@ class StudentController extends Controller
         $student = Student::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
-            'code' =>'12A4'.$code,
-            'classname_id'=>$request->classname
+            'code' => $cl->name . $code,
+            'classname_id' => $request->classname,
+            'birthDate' => Carbon::parse($request->birth_date)
         ]);
         $student->marks()->save(new Mark([
             'subject_id'=>1

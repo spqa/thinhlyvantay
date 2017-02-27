@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classname;
 use App\Http\Controllers\Controller;
 use App\Mark;
 use App\Student;
+use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +19,18 @@ class MarkController extends Controller
      */
     public function index()
     {
-        //
+        $classname = request('classname');
+        $classnames = Classname::all();
+        if (!empty($classname)) {
+            $class_filter = Classname::whereName($classname)->firstOrFail();
+        } else {
+            $class_filter = Classname::first();
+
+        }
+        $students = $class_filter->students;
+        $students->load('marks');
+        $subjects = Subject::all();
+        return view('admin.average_mark', compact('class_filter', 'students', 'subjects', 'classnames'));
     }
 
     /**
@@ -45,7 +58,7 @@ class MarkController extends Controller
             $students=$data['student'];
             DB::beginTransaction();
             foreach ($students as $student){
-                foreach ($student['marks'] as $key=>$value){
+                foreach ($student['marks'] as $key=> $value){
                     if ($value==''){
                         $student['marks'][$key]=DB::raw('NULL');
                     }

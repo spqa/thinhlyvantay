@@ -10,7 +10,7 @@
 {{--    <link rel="stylesheet" href="{{asset('css/dataTables.material.css')}}">--}}
 
     <link rel="stylesheet" href="//cdn.datatables.net/fixedheader/3.1.2/css/fixedHeader.dataTables.min.css">
-    <link rel="stylesheet" href="{{asset('css/style.css?v=0.1')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css?v=0.2')}}">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -78,6 +78,6 @@
 <script src="{{asset('js/dataTables.material.js')}}"></script>
 <script src="//cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
 
-<script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('js/script.js?v=0.2')}}"></script>
 </body>
 </html>

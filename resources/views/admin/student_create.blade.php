@@ -26,7 +26,10 @@
                             <input name="last_name" id="last_name" type="text" class="validate">
                             <label for="last_name">Họ</label>
                         </div>
-                        <div class="input-field col s12">
+                        <div class="input-field col s6">
+                            <input placeholder="Ngày sinh *" type="date" name="birth_date" class="datepicker">
+                        </div>
+                        <div class="input-field col s6">
                             <select id="class-select" name="classname">
                                 <option value="" disabled selected>Chọn lớp</option>
                                 @foreach($classnames as $item)
@@ -44,3 +47,12 @@
         </section>
     </div>
     @endsection
+
+@section('page_script')
+    <script>
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+    </script>
+@endsection

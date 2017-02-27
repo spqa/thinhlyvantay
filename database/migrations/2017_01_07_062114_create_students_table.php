@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateStudentsTable extends Migration
 {
@@ -20,8 +20,8 @@ class CreateStudentsTable extends Migration
             $table->string('code');
             $table->integer('classname_id');
             $table->string('note')->nullable();
-            $table->integer('absent')->unsigned();
-            $table->integer('late')->unsigned();
+            $table->integer('absent')->unsigned()->nullable();
+            $table->integer('late')->unsigned()->nullable();
             $table->timestamps();
         });
     }
