@@ -15,5 +15,4 @@
 //    return $request->user();
 //})->middleware('auth:api');
 
-Route::get('table/class/{class}/subject/{subject}','Admin\MarkController@show');
-Route::post('table/save','Admin\MarkController@store');
+

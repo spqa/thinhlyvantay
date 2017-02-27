@@ -35,7 +35,7 @@
         <section>
             <div class="card-panel overflow-y">
                 <table class="bordered highlight centered no-radius" id="st-tbl-mark-fe">
-                    <thead class="white-text green darken-1">
+                    <thead class="white-text green darke    n-1">
                     <tr>
                         <th width="5%" data-field="id" rowspan="2">STT</th>
                         <th width="10%" data-field="name" rowspan="2">Tên học sinh</th>

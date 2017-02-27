@@ -14,7 +14,7 @@ $(document).ready(function () {
         searching: false,
         info: false,
         autoWidth: false,
-        fixedHeader: true
+        fixedHeader: false
     });
     $(".button-collapse").sideNav({
         menuWidth:270

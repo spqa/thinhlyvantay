@@ -34,4 +34,7 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
     Route::get('export-exel/{id}','SubjectController@exportSubjectReport');
 });
 
+Route::get('/api/table/class/{class}/subject/{subject}','Admin\MarkController@show')->middleware('auth');
+Route::post('/api/table/save','Admin\MarkController@store');
+
 
