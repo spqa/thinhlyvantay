@@ -29,7 +29,7 @@
                             @foreach($subjects as $subject)
                                 <th>{{$subject->name}}</th>
                             @endforeach
-
+                            <th>TBM</th>
                         </tr>
                         </thead>
 
@@ -42,6 +42,7 @@
                                 @foreach($subjects as $subject)
                                     <td>{{!empty($temp=$student->marks->where('subject_id',$subject->id)->first())?$temp->TBM:''}}</td>
                                 @endforeach
+                                <td>{{round($student->marks->avg('TBM'),2)}}</td>
                             </tr>
                         @endforeach
                         </tbody>
