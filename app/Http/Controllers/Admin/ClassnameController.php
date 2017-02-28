@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Classname;
 use App\Http\Controllers\Controller;
 use App\Student;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ClassnameController extends Controller
 {
@@ -107,6 +107,7 @@ class ClassnameController extends Controller
     public function save_student_info()
     {
         $student_info = request('student_info');
+//        dd($student_info);
         $index = 0;
         foreach ($student_info as $row) {
 
@@ -115,20 +116,29 @@ class ClassnameController extends Controller
             ) {
                 return "Sai kiểu chữ số";
             }
+            try{
+                if (!empty($row['birthDate'])){
+                    Carbon::parse($row['birthDate']);
+                }
+            }catch(\Exception $exception){
+                return 'Sai kiểu ngày sinh';
+            }
 
             foreach ($row as $key => $value) {
                 if ($value == '') {
-                    $student_info[$index][$key] = DB::raw('NULL');
+                    $student_info[$index][$key] = null;
                 }
 
             }
             $index++;
         }
+//        dd($student_info);
         try {
             foreach ($student_info as $row) {
                 $student = Student::find($row['id']);
                 $student->last_name = $row['last_name'];
                 $student->first_name = $row['first_name'];
+                $student->birthDate=$row['birthDate']==null?null:Carbon::parse($row['birthDate']);
                 $student->absent = $row['absent'];
                 $student->late = $row['late'];
                 $student->note = $row['note'];
@@ -136,7 +146,7 @@ class ClassnameController extends Controller
             }
             return 1;
         } catch (\Exception $exception) {
-            return $exception->getMessage();
+            return $exception->getMessage().' '.$exception->getLine();
 
         }
 
