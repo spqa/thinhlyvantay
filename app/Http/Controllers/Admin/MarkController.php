@@ -9,6 +9,7 @@ use App\Student;
 use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class MarkController extends Controller
 {
@@ -88,7 +89,8 @@ class MarkController extends Controller
             DB::commit();
         }catch (\Exception $ex){
             DB::rollback();
-
+            Log::error($ex->getMessage());
+            Log::error($ex->getTraceAsString());
             return $ex->getMessage();
         }
 

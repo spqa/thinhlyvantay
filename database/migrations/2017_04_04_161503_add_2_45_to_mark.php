@@ -14,8 +14,8 @@ class Add245ToMark extends Migration
     public function up()
     {
         Schema::table('marks',function (Blueprint $table){
-            $table->string('H2G3')->nullable();
-            $table->string('H2G4')->nullable();
+            $table->float('H2G3')->nullable();
+            $table->float('H2G4')->nullable();
 
         });
     }
