@@ -86,7 +86,7 @@
 
 <script src="{{asset('js/jquery.dataTables.js')}}"></script>
 <script src="{{asset('js/dataTables.material.js')}}"></script>
-<script src="{{asset('js/script.js?v=0.2')}}"></script>
+<script src="{{asset('js/script.js?v=0.3')}}"></script>
 @yield('page_script')
 </body>
 </html>
