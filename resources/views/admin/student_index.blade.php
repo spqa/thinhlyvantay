@@ -41,7 +41,7 @@
                         <th width="10%" data-field="name" rowspan="2">Tên học sinh</th>
                         <th colspan="4">M</th>
                         <th colspan="4">15</th>
-                        <th colspan="2">45</th>
+                        <th colspan="4">45</th>
                         <th>HK</th>
                         <th>TBM</th>
                     </tr>
@@ -56,6 +56,8 @@
                         <th>4</th>
                         <th>1</th>
                         <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
                         <th>1</th>
                         <th>1</th>
                     </tr>
@@ -67,7 +69,7 @@
                             <td>{{$student->last_name.' '.$student->first_name}}</td>
                             <td data-type="H1" data-content="H1M1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M1}}</td>
                             <td data-type="H1" data-content="H1M2" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M2}}</td>
-                            <td data-type="H1" data-content="H1M3" data-content="H1M1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M3}}</td>
+                            <td data-type="H1" data-content="H1M3" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M3}}</td>
                             <td data-type="H1" data-content="H1M4" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1M4}}</td>
                             <td data-type="H1" data-content="H1G1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G1}}</td>
                             <td data-type="H1" data-content="H1G2" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G2}}</td>
@@ -75,6 +77,8 @@
                             <td data-type="H1" data-content="H1G4" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H1G4}}</td>
                             <td data-type="H2" data-content="H2G1" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H2G1}}</td>
                             <td data-type="H2" data-content="H2G2" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H2G2}}</td>
+                            <td data-type="H2" data-content="H2G3" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H2G3}}</td>
+                            <td data-type="H2" data-content="H2G4" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->H2G4}}</td>
                             <td data-type="H3" data-content="HK" contenteditable="true">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->HK}}</td>
                             <td data-type="TBM" data-content="TBM">{{$student->marks->where('subject_id',$subjects->first()->id)->first()->TBM}}</td>
                         </tr>

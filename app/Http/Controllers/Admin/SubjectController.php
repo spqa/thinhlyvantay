@@ -175,7 +175,7 @@ class SubjectController extends Controller
     public function exportSubjectReport($id,SubjectMarkReport $report){
         $subject=Subject::find($id);
         $report->sheet('Bảng điểm môn học '.$subject->name,function ($sheet)use($subject){
-            $sheet->appendRow(['STT','Mã HS','Họ tên','M1','M2','M3','M4','15P1','15P2','15P3','15P4','45P1','45P2','HK']);
+            $sheet->appendRow(['STT','Mã HS','Họ tên','M1','M2','M3','M4','15P1','15P2','15P3','15P4','45P1','45P2','45P3','45P4','HK']);
             $students=Student::with('marks')->get();
             $index=0;
             foreach ($students as $student){
@@ -195,6 +195,8 @@ class SubjectController extends Controller
                 $marks->H1G4,
                 $marks->H2G1,
                 $marks->H2G2,
+                $marks->H2G3,
+                $marks->H2G4,
                 $marks->HK,
             ]);
             }

@@ -121,7 +121,7 @@ $(document).ready(function () {
                         var row = table.row.add([
                             i,
                             value.last_name + ' ' + value.first_name,
-                            '', '', '', '', '', '', '', '', '', '', '', ''
+                            '', '', '', '', '', '', '', '', '', '', '', '','',''
                         ]).draw().node();
                         $(row).attr('data-content',value.id);
                         var td = $(row).find('td');
@@ -135,8 +135,10 @@ $(document).ready(function () {
                         td.eq(9).attr('data-type', 'H1').attr('contenteditable', 'true').attr('data-content','H1G4');
                         td.eq(10).attr('data-type', 'H2').attr('contenteditable', 'true').attr('data-content','H2G1');
                         td.eq(11).attr('data-type', 'H2').attr('contenteditable', 'true').attr('data-content','H2G2');
-                        td.eq(12).attr('data-type', 'H3').attr('contenteditable', 'true').attr('data-content','HK');
-                        td.eq(13).attr('data-type', 'TBM').attr('data-content','TBM');
+                        td.eq(12).attr('data-type', 'H2').attr('contenteditable', 'true').attr('data-content','H2G3');
+                        td.eq(13).attr('data-type', 'H2').attr('contenteditable', 'true').attr('data-content','H2G4');
+                        td.eq(14).attr('data-type', 'H3').attr('contenteditable', 'true').attr('data-content','HK');
+                        td.eq(15).attr('data-type', 'TBM').attr('data-content','TBM');
                     } else {
                         var row = table.row.add([
                             i,
@@ -151,6 +153,8 @@ $(document).ready(function () {
                             value.marks[0].H1G4,
                             value.marks[0].H2G1,
                             value.marks[0].H2G2,
+                            value.marks[0].H2G3,
+                            value.marks[0].H2G4,
                             value.marks[0].HK,
                             value.marks[0].TBM
                         ]).draw().node();
@@ -166,8 +170,10 @@ $(document).ready(function () {
                         td.eq(9).attr('data-type', 'H1').attr('contenteditable', 'true').attr('data-content','H1G4');
                         td.eq(10).attr('data-type', 'H2').attr('contenteditable', 'true').attr('data-content','H2G1');
                         td.eq(11).attr('data-type', 'H2').attr('contenteditable', 'true').attr('data-content','H2G2');
-                        td.eq(12).attr('data-type', 'H3').attr('contenteditable', 'true').attr('data-content','HK');
-                        td.eq(13).attr('data-type', 'TBM').attr('data-content','TBM');
+                        td.eq(12).attr('data-type', 'H2').attr('contenteditable', 'true').attr('data-content','H2G3');
+                        td.eq(13).attr('data-type', 'H2').attr('contenteditable', 'true').attr('data-content','H2G4');
+                        td.eq(14).attr('data-type', 'H3').attr('contenteditable', 'true').attr('data-content','HK');
+                        td.eq(15).attr('data-type', 'TBM').attr('data-content','TBM');
                     }
 
                 });
@@ -200,6 +206,8 @@ $(document).ready(function () {
             marks.H1G4=$(this).find('td[data-content="H1G4"]').first().text();
             marks.H2G1=$(this).find('td[data-content="H2G1"]').first().text();
             marks.H2G2=$(this).find('td[data-content="H2G2"]').first().text();
+            marks.H2G3=$(this).find('td[data-content="H2G3"]').first().text();
+            marks.H2G4=$(this).find('td[data-content="H2G4"]').first().text();
             marks.HK=$(this).find('td[data-content="HK"]').first().text();
             marks.TBM=$(this).find('td[data-content="TBM"]').first().text();
             object.marks=marks;

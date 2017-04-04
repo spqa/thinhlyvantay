@@ -78,6 +78,6 @@
 <script src="{{asset('js/dataTables.material.js')}}"></script>
 <script src="//cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script>
 
-<script src="{{asset('js/script.js?v=0.2')}}"></script>
+<script src="{{asset('js/script.js?v=0.3')}}"></script>
 </body>
 </html>

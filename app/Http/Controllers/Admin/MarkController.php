@@ -79,6 +79,8 @@ class MarkController extends Controller
                 $mark->H1G4=$student['marks']['H1G4'];
                 $mark->H2G1=$student['marks']['H2G1'];
                 $mark->H2G2=$student['marks']['H2G2'];
+                $mark->H2G3=$student['marks']['H2G3'];
+                $mark->H2G4=$student['marks']['H2G4'];
                 $mark->HK=$student['marks']['HK'];
                 $mark->TBM=$student['marks']['TBM'];
                 $mark->save();

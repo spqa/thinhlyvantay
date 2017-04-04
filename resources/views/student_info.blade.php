@@ -20,7 +20,7 @@
                         <th width="10%" data-field="name" rowspan="2">Môn học</th>
                         <th colspan="4">M</th>
                         <th colspan="4">15</th>
-                        <th colspan="2">45</th>
+                        <th colspan="4">45</th>
                         <th>HK</th>
                         <th>TBM</th>
                     </tr>
@@ -35,6 +35,8 @@
                         <th>4</th>
                         <th>1</th>
                         <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
                         <th>1</th>
                         <th>1</th>
                     </tr>
@@ -55,6 +57,8 @@
                             <td>{{$mark->H1G4}}</td>
                             <td>{{$mark->H2G1}}</td>
                             <td>{{$mark->H2G2}}</td>
+                            <td>{{$mark->H2G3}}</td>
+                            <td>{{$mark->H2G4}}</td>
                             <td>{{$mark->HK}}</td>
                             <td>{{$mark->TBM}}</td>
                         </tr>
