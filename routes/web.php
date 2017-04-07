@@ -13,13 +13,15 @@
 
 Route::get('/', 'IndexController@parent_login_show');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+//Auth::routes();
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+//Route::get('/home', 'HomeController@index');
 
 Route::post('student','IndexController@student_info')->name('student.info');
 
-Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
+Route::group(['namespace'=>'Admin','prefix'=>'admin','middleware'=>'auth'],function (){
     Route::resource('mark','MarkController');
     Route::resource('student','StudentController');
     Route::resource('subject','SubjectController');
@@ -34,6 +36,6 @@ Route::group(['namespace'=>'Admin','prefix'=>'admin'],function (){
 });
 
 Route::get('/api/table/class/{class}/subject/{subject}','Admin\MarkController@show')->middleware('auth');
-Route::post('/api/table/save','Admin\MarkController@store');
+Route::post('/api/table/save','Admin\MarkController@store')->middleware('auth');
 
 
